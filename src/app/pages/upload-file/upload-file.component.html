@@ -1,0 +1,54 @@
+<div class="body">
+  <mat-card class="upload-container">
+    <mat-card-title>Upload Files</mat-card-title>
+    <mat-card-subtitle>
+      Make {{ source.toUpperCase() }} files easy to read by converting them to
+      {{ destination.toUpperCase() }}
+    </mat-card-subtitle>
+
+    <div class="drop-zone" (drop)="onDrop($event)" (dragover)="$event.preventDefault()">
+      <input #fileInput type="file" hidden (change)="onFileSelected($event)" multiple [accept]="acceptedExtensions" />
+
+      <button mat-raised-button color="accent" (click)="openFileDialog()">
+        <mat-icon>upload_file</mat-icon>
+        Choose Files
+      </button>
+      <p>or drag & drop files here</p>
+
+      <div class="file-preview-container" *ngIf="selectedFiles.length > 0">
+        <mat-card class="file-card" *ngFor="let file of selectedFiles; let i = index">
+          <button mat-icon-button color="warn" class="remove-btn" (click)="removeFile(i)">
+            <mat-icon>close</mat-icon>
+          </button>
+          <mat-card-content class="file-info">
+            <mat-icon class="file-icon">insert_drive_file</mat-icon>
+            <span class="file-name">{{ file.name }}</span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="onUpload()" [disabled]="selectedFiles.length === 0">
+      <mat-icon>cloud_upload</mat-icon>
+      Upload & Convert
+    </button>
+  </mat-card>
+
+  <!-- Converted Files Section -->
+  <mat-card class="converted-files-container" *ngIf="convertedFiles.length > 0">
+    <mat-card-title>Converted Files</mat-card-title>
+    <div class="converted-files">
+      <mat-card class="file-card" *ngFor="let file of convertedFiles">
+        <mat-card-content class="file-info">
+          <mat-icon class="file-icon">download</mat-icon>
+          <span class="file-name">{{ file.name }}</span>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+    <button mat-raised-button color="primary" (click)="downloadFile()">
+      <mat-icon>download</mat-icon>
+      Download
+    </button>
+  </mat-card>
+</div>

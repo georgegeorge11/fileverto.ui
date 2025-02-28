@@ -1,0 +1,24 @@
+.body {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+}
+
+.title {
+  height: 20vh;
+}
+
+.content {
+  height: calc(80vh - 120px);
+  overflow: auto;
+}
+
+mat-card-content {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+

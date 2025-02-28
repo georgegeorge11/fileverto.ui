@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+
+mat-card {
+  width: 240px;
+  height: 220px;
+  display: flex;
+}
+mat-card:hover {
+   mat-icon {
+     transform: scale(2);
+   }
+  @include mat.card-overrides((
+    elevated-container-color:var(--mat-sys-background)
+  ));
+}
+
+mat-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  //align-items: center;
+  //font-size: var(--font-size-medium);
+}
+
+
+mat-icon {
+  transform: scale(1.5);
+  @include mat.icon-overrides((
+    color: var(--mat-sys-primary)
+  ));
+
+}
+
+mat-button {
+  @include mat.button-overrides((
+    filled-container-color: var(--mat-sys-primary),
+    filled-ripple-color: var(--mat-sys-primary)
+  ));
+}
+
+p {
+  font-size: 20px;
+  word-break: break-word;
+}
+
+
+
+
+

@@ -1,0 +1,15 @@
+<div class="body">
+  <div class="title">
+    <mat-card-header>
+      <mat-card-title>Every Tool You Need to Convert Files – All in One Place!</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div class="content">
+    <mat-card-content>
+      @for (convertType of convertTypes; track convertType.convertTypePK) {
+        <app-convert-card
+          [convertType]="convertType"/>
+      }
+    </mat-card-content>
+  </div>
+</div>

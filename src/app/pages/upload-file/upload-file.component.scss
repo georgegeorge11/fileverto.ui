@@ -1,0 +1,136 @@
+.body {
+  height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+}
+.upload-container {
+  width: 50vw;
+  height: 75vh;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.drop-zone {
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 50vh;
+
+}
+
+.drop-zone:hover {
+  border-color: var(--mat-sys-primary);
+  background: #f4f4f4;
+}
+
+
+.file-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  //justify-content: center;
+  margin-top: 20px;
+  height: 35vh;
+  overflow: auto;
+}
+
+
+.file-card {
+  position: relative;
+  width: 15vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.file-icon {
+  //font-size: 40px;
+  color: var(--mat-sys-primary);
+}
+
+.file-name {
+  font-size: 14px;
+  word-break: break-all;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Remove Button */
+.remove-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+
+  border-radius: 50%;
+}
+
+.converted-files-container {
+  width: 30vw;
+  height: calc(100vh - 120px);
+  padding: 20px;
+  text-align: center;
+}
+
+.converted-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  height: 70vh;
+  overflow-y: auto;
+}
+
+.converted-file-card {
+  position: relative;
+  width: 15vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: linear-gradient(to bottom right, #ffffff, #e0f7fa);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.download-btn {
+  margin-top: 10px;
+  background-color: var(--mat-sys-primary);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background-color: var(--mat-sys-primary-light);
+  transform: scale(1.1);
+}

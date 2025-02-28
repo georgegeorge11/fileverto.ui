@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+
+mat-toolbar {
+  justify-content: space-between;
+  height: 60px;
+
+  @include mat.toolbar-overrides((
+    container-background-color: var(--mat-sys-primary),
+    container-text-color: var(--mat-sys-on-primary),
+  ));
+
+  @include mat.icon-button-overrides((
+    icon-color: var(--mat-sys-on-primary),
+  ));
+}
+
+.theme-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+span {
+  cursor: pointer;
+}
+
+span:hover{
+  transform: scale(1.01);
+}
+
